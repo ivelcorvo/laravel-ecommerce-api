@@ -59,6 +59,7 @@ docker compose exec app php artisan migrate --seed
 ---
 
 ## Arquitetura de pastas
+```
 src/
 ├── app/
 │   ├── Helpers/          # ApiResponse — padrão de resposta da API
@@ -73,5 +74,6 @@ src/
 │   └── seeders/
 └── routes/
 └── api.php
+```
 
 ---
