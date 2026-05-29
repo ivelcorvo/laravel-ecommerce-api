@@ -8,6 +8,14 @@ Stack: **PHP 8.4** · **Laravel 13** · **PostgreSQL 16** · **Redis 7** · **Ng
 
 ---
 
+## Base
+
+Este projeto foi inicializado a partir de um template Docker profissional para Laravel 13, desenvolvido com auxílio de IA — especificamente o Claude (Anthropic).
+
+🔗 [ivelcorvo/TEMPLATE_LARARAVEL13_POSTGRESQL_DOCKER_2026](https://github.com/ivelcorvo/TEMPLATE_LARARAVEL13_POSTGRESQL_DOCKER_2026)
+
+---
+
 ## Pré-requisitos
 
 - Docker Engine 24+
@@ -61,21 +69,3 @@ docker compose exec app php artisan migrate --seed
 ---
 
 ## Arquitetura de pastas
-```
-src/
-├── app/
-│   ├── Helpers/          # ApiResponse — padrão de resposta da API
-│   ├── Http/
-│   │   ├── Controllers/Api/
-│   │   ├── Requests/     # Validações por recurso
-│   │   └── Resources/    # Formatação do JSON de saída
-│   ├── Models/           # Category, Product, Customer, Order, OrderItem
-│   └── Services/         # Regras de negócio (OrderService)
-├── database/
-│   ├── migrations/
-│   └── seeders/
-└── routes/
-└── api.php
-```
-
----
