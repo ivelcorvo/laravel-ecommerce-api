@@ -8,26 +8,26 @@ API REST | e-commerce construída com Laravel 13, PostgreSQL e Redis.
 
 | Endpoint | Método | Status |
 |---|---|---|
-| /categorias | GET | Pendente |
-| /categorias/{id} | GET | Pendente |
-| /categorias | POST | Pendente |
-| /categorias/{id} | PUT | Pendente |
-| /categorias/{id} | DELETE | Pendente |
-| /produtos | GET | Pendente |
-| /produtos/{id} | GET | Pendente |
-| /produtos | POST | Pendente |
-| /produtos/{id} | PUT | Pendente |
-| /produtos/{id} | DELETE | Pendente |
-| /clientes | GET | Pendente |
-| /clientes/{id} | GET | Pendente |
-| /clientes | POST | Pendente |
-| /clientes/{id} | PUT | Pendente |
-| /clientes/{id} | DELETE | Pendente |
-| /pedidos | GET | Pendente |
-| /pedidos/{id} | GET | Pendente |
-| /pedidos | POST | Pendente |
-| /pedidos/{id}/status | PUT | Pendente |
-| /pedidos/{id} | DELETE | Pendente |
+| /categories | GET | ✅ Concluído |
+| /categories/{id} | GET | ✅ Concluído |
+| /categories | POST | ✅ Concluído |
+| /categories/{id} | PUT | ✅ Concluído |
+| /categories/{id} | DELETE | ✅ Concluído |
+| /products | GET | Pendente |
+| /products/{id} | GET | Pendente |
+| /products | POST | Pendente |
+| /products/{id} | PUT | Pendente |
+| /products/{id} | DELETE | Pendente |
+| /customers | GET | Pendente |
+| /customers/{id} | GET | Pendente |
+| /customers | POST | Pendente |
+| /customers/{id} | PUT | Pendente |
+| /customers/{id} | DELETE | Pendente |
+| /orders | GET | Pendente |
+| /orders/{id} | GET | Pendente |
+| /orders | POST | Pendente |
+| /orders/{id}/status | PUT | Pendente |
+| /orders/{id} | DELETE | Pendente |
 
 ---
 
@@ -53,25 +53,82 @@ API REST | e-commerce construída com Laravel 13, PostgreSQL e Redis.
 
 ---
 
-## Categorias
+## Categories
+
+### Arquitetura
+- **Migration:** `database/migrations/xxxx_create_categories_table.php`
+- **Model:** `app/Models/Category.php`
+- **Requests:** `app/Http/Requests/Category/`
+- **Resource:** `app/Http/Resources/Category/CategoryResource.php`
+- **Controller:** `app/Http/Controllers/Api/CategoryController.php`
+- **Seeder:** `database/seeders/CategorySeeder.php`
+
+### Campos
+
+| Campo | Tipo | Obrigatório | Descrição |
+|---|---|---|---|
+| name | string(100) | Sim | Nome único da categoria |
+| slug | string(120) | Não | Gerado automaticamente a partir do name |
+| description | text | Não | Descrição da categoria |
+
+### Endpoints
+
+#### GET /api/categories
+Lista todas as categorias.
+
+**Resposta:**
+```json
+{
+  "success": true,
+  "message": "Categorias listadas com sucesso.",
+  "data": [
+    {
+      "id": 1,
+      "name": "Electronics",
+      "slug": "electronics",
+      "description": "Electronic products and gadgets",
+      "created_at": "29/05/2026 18:00",
+      "updated_at": "29/05/2026 18:00"
+    }
+  ]
+}
+```
+
+#### GET /api/categories/{id}
+Retorna uma categoria específica.
+
+#### POST /api/categories
+Cria uma nova categoria.
+
+**Body:**
+```json
+{
+  "name": "Electronics",
+  "description": "Electronic products and gadgets"
+}
+```
+
+#### PUT /api/categories/{id}
+Atualiza uma categoria. Todos os campos são opcionais.
+
+#### DELETE /api/categories/{id}
+Remove uma categoria.
+
+---
+
+## Products
 
 Em desenvolvimento.
 
 ---
 
-## Produtos
+## Customers
 
 Em desenvolvimento.
 
 ---
 
-## Clientes
-
-Em desenvolvimento.
-
----
-
-## Pedidos
+## Orders
 
 Em desenvolvimento.
 
