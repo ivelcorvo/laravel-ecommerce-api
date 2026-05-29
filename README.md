@@ -1,5 +1,7 @@
 # laravel-ecommerce-api
 
+[ EM DESENVOLVIMENTO ]
+
 API REST de e-commerce construída com Laravel 13 e PostgreSQL, dockerizada e pronta para integração com qualquer frontend (React, Vue, mobile).
 
 Stack: **PHP 8.4** · **Laravel 13** · **PostgreSQL 16** · **Redis 7** · **Nginx 1.27**
