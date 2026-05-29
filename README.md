@@ -69,3 +69,19 @@ docker compose exec app php artisan migrate --seed
 ---
 
 ## Arquitetura de pastas
+src/
+├── app/
+│   ├── Helpers/          # ApiResponse — padrão de resposta da API
+│   ├── Http/
+│   │   ├── Controllers/Api/
+│   │   ├── Requests/     # Validações por recurso
+│   │   └── Resources/    # Formatação do JSON de saída
+│   ├── Models/           # Category, Product, Customer, Order, OrderItem
+│   └── Services/         # Regras de negócio (OrderService)
+├── database/
+│   ├── migrations/
+│   └── seeders/
+└── routes/
+└── api.php
+
+---
